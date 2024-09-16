@@ -1,0 +1,125 @@
+/*===========================
+=============================
+
+       |Alexey Eretin|
+
+/*===========================
+=============================*/
+
+.slider {
+  position: relative;
+}
+
+.slider__container {
+  overflow: hidden;
+}
+
+.slider__wrapper {
+  overflow: hidden; 
+}
+
+.slider__items {
+  display: flex;
+  transition: transform 0.5s ease;
+
+}
+
+.slider_disable-transition {
+  transition: none;
+}
+
+.slider__item {
+  flex: 0 0 25%;
+  max-width: 25%;
+  user-select: none;
+}
+
+/* кнопки влево и вправо */
+
+.slider__control {
+  top: -10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 50px;
+  color: #fff;
+  text-align: center;
+  background: transparent;
+  border: none;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.slider__control_hide {
+  display: none;
+}
+
+.slider__control[data-slide="prev"] {
+  right: 8%;
+}
+
+.slider__control[data-slide="next"] {
+  right: 0;
+}
+
+
+/*
+.slider__control::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+}*/
+
+.bi-chevron {
+  width: 30px;
+  height: 30px;
+  fill: #cad1d7;
+  transition: fill 300ms;
+}
+
+.bi-chevron:hover {
+  fill: #477cc7;
+}
+
+/* индикаторы */
+
+.slider__indicators {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  margin-right: 15%;
+  margin-bottom: -60px;
+  margin-left: 15%;
+  padding-left: 0;
+  list-style: none;
+}
+
+.slider__indicators li {
+  flex: 0 1 auto;
+  box-sizing: content-box;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  margin-left: 6px;
+  text-indent: -999px;
+  border-radius: 100%;
+  background-color: var(--color-10);
+  background-clip: padding-box;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+
+.slider__indicators li.active {
+  background-color: var(--color-8);
+}
